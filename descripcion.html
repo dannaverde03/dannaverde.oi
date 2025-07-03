@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Montañas en México – Descripción</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('img5.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+    header {
+      background: rgba(2, 136, 209, 0.8);
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .main-img {
+      display: none;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 6px;
+    }
+    .description {
+      display: none;
+      max-width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      font-size: 18px;
+      text-align: center;
+    }
+    .back-btn {
+      background: #039be5;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      display: block;
+      margin: 30px auto 0;
+    }
+    .back-btn:hover {
+      background: #0288d1;
+    }
+  </style>
+</head>
+<body>
+
+<header>Montañas en México</header>
+
+<form>
+  <div class="option">
+    <input type="radio" id="opt1" name="montana" value="img2.jpg">
+    <label for="opt1">Pico de Orizaba</label>
+  </div>
+  <div class="option">
+    <input type="radio" id="opt2" name="montana" value="img3.jpg">
+    <label for="opt2">Popocatépetl</label>
+  </div>
+  <div class="option">
+    <input type="radio" id="opt3" name="montana" value="img4.jpg">
+    <label for="opt3">Iztaccíhuatl</label>
+  </div>
+</form>
+
+<img id="main-img" class="main-img" src="" alt="Montaña seleccionada">
+
+<div id="desc" class="description"></div>
+
+<button class="back-btn" onclick="window.close()">Regresar</button>
+
+<script>
+  const descriptions = {
+    "img2.jpg": "Pico de Orizaba (Citlaltépetl) es el volcán más alto de México, alcanzando los 5,636 m.",
+    "img3.jpg": "Popocatépetl es un volcán activo ubicado entre Puebla, México y Morelos, con 5,426 m.",
+    "img4.jpg": "Iztaccíhuatl, la “Mujer Dormida”, es un volcán de 5,230 m situado junto al Popocatépetl."
+  };
+
+  const radios = document.querySelectorAll('input[name="montana"]');
+  const img = document.getElementById('main-img');
+  const desc = document.getElementById('desc');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const val = radio.value;
+      img.src = val;
+      img.style.display = 'block';
+      desc.textContent = descriptions[val] || '';
+      desc.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
