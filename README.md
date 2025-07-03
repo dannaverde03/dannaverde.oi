@@ -1,2 +1,0 @@
-# dannaverde.oi
-Danna verde
