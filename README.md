@@ -1,1 +1,54 @@
-danna paola
+DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Montañas en México</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #eef7f9; }
+    header {
+      background: #0288d1;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .container { display: flex; height: calc(100vh - 60px); }
+    .sidebar {
+      width: 250px; background: #b3e5fc; padding: 20px;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .sidebar button {
+      margin-bottom: 15px; padding: 10px;
+      background: #039be5; color: white; border: none;
+      cursor: pointer; font-size: 16px; border-radius: 4px;
+      width: 100%;
+    }
+    .sidebar button:hover { background: #2096d6; }
+    .image-container {
+      flex-grow: 1; display: flex;
+      align-items: center; justify-content: center;
+      background: rgb(10, 199, 247);
+      border-left: 2px solid #b3e5fc;
+    }
+    .image-container img {
+      max-width: 90%; max-height: 90%; border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>Montañas en México</header>
+  <div class="container">
+    <div class="sidebar">
+      <button onclick="window.open('descripcion.html', '_blank')">Descripción</button>
+      <button onclick="window.open('recomendacion.html', '_blank')">Recomendaciones</button>
+      <button onclick="window.open('ventas.html','_blank')">Ventas</button>
+      <button onclick="window.open('video.html','_blank')">Video</button>
+    </div>
+    <div class="image-container">
+      <img src="img1.jpg" alt="Montaña de México">
+    </div>
+  </div>
+</body>
+</html>
+
