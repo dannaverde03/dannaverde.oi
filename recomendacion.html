@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recomendaciones</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #8cacc7; padding: 30px; text-align: center; }
+    h1 { color: #0288d1; margin-bottom: 20px; }
+    textarea {
+      width: 80%;
+      height: 120px;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #1b974f;
+      border-radius: 4px;
+    }
+    img { max-width: 80%; height: auto; margin: 20px 0; border-radius: 6px; }
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #039be5;
+      color: white;
+    }
+    button:hover { background: #0288d1; }
+    #mensajeMostrado { margin-top: 20px; font-size: 18px; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Recomendaciones</h1>
+
+  <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea><br>
+
+  <img src="imagen7.jpg" alt="Imagen de recomendaciones"><br>
+
+  <button onclick="enviarMensaje()">Enviar mensaje</button>
+  <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+  <button onclick="regresar()">Regresar</button>
+
+  <div id="mensajeMostrado"></div>
+
+  <script>
+    let mensajeGuardado = "";
+
+    function enviarMensaje() {
+      const msj = document.getElementById('mensaje').value.trim();
+      if (!msj) {
+        alert('Por favor, escribe un mensaje antes de enviarlo.');
+        return;
+      }
+      mensajeGuardado = msj;
+      alert('Mensaje enviado correctamente.');
+      document.getElementById('mensaje').value = '';
+    }
+
+    function mostrarMensaje() {
+      const display = document.getElementById('mensajeMostrado');
+      display.textContent = mensajeGuardado
+        ? 'Mensaje guardado: ' + mensajeGuardado
+        : 'No hay ningún mensaje guardado.';
+    }
+
+    function regresar() {
+      window.location.href = 'montañas.html';
+    }
+  </script>
+</body>
+</html>
